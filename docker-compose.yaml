@@ -1,0 +1,36 @@
+version: "3.3"
+
+services:
+  queue:
+    image: rabbitmq:3.9-management-alpine
+    container_name: queue
+    network_mode: host
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+  # web ui: http://localhost:15672/#/
+
+  db:
+    image: redis:3-alpine3.8
+    container_name: db
+    network_mode: host
+    ports:
+      - 6379:6379
+  # cli:
+  # docker exec -it db sh
+  # redis-cli -h localhost -p 6379
+
+  processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: processor
+    container_name: processor
+    network_mode: host
+    deploy:
+      replicas: 2
+
+

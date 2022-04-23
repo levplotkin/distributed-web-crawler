@@ -1,0 +1,8 @@
+requests==2.27.1
+validators==0.12.5
+beautifulsoup4==4.11.1
+dynaconf==3.1.7
+pika==1.2.0
+click==8.1.2
+dataclasses-json==0.5.7
+redis==4.2.2
