@@ -1,3 +1,4 @@
+```mermaid
 flowchart
 
 seed  -.->|initial url| url_queue 
@@ -17,3 +18,4 @@ end
 
 subgraph web
 end
+```
