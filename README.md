@@ -68,12 +68,13 @@ $ python3 web_crawler.py start-crawler --root https://medium.com/ --depth 3
 
 ```
 $ python3 web_crawler.py  save-report --help
-  --output TEXT  path to output file  [required]
-  --help         Show this message and exit.
+  --scan-id TEXT  scan id  [required]
+  --output TEXT   path to output file  [required]
+  --help          Show this message and exit.
 ```
 
 #### example
 
 ```
-python3 web_crawler.py save-report --output result.tsv
+python3 web_crawler.py save-report --output=result.tsv --scan-id=bca240552e404b6ab0eeee3ea76b6a0b
 ```
