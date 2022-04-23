@@ -78,3 +78,26 @@ $ python3 web_crawler.py  save-report --help
 ```
 python3 web_crawler.py save-report --output=result.tsv --scan-id=bca240552e404b6ab0eeee3ea76b6a0b
 ```
+
+# Configuration
+
+see [settings.toml](config/settings.toml) file
+
+for local deployment
+
+```
+LOG_LEVEL = "DEBUG"
+
+DB_HOST = "localhost"
+DB_PORT = 6379
+
+URL_QUEUE_NAME = "url_queue"
+QUEUE_HOST = "localhost"
+QUEUE_PORT = 5672
+QUEUE_USER = "rabbitmq"
+QUEUE_PASS = "rabbitmq"
+```
+
+# Local deployment
+
+see [docker-compose.yaml](docker-compose.yaml) file
