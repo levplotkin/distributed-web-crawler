@@ -31,7 +31,6 @@ data scheme:
 - depth
 - scan_id
 - timestamp
-- page_content_hash
 - hostname
 - rank
 
