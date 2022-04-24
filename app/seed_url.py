@@ -8,7 +8,7 @@ log = getLogger(__name__)
 
 
 def seed_url(depth, root):
-    log.info('seed_url  >>>>>>>>>>>>>>>> ')
-    message = Message(depth=depth, url=root, scan_id=uuid.uuid4().hex)
-
+    scan_id = uuid.uuid4().hex
+    message = Message(depth=depth, url=root, scan_id=scan_id)
+    log.info(f'start web crawler {message}')
     put(message.to_json())

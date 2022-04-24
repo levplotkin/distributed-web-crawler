@@ -101,3 +101,9 @@ QUEUE_PASS = "rabbitmq"
 # Local deployment
 
 see [docker-compose.yaml](docker-compose.yaml) file
+
+[rabbitmq web ui](http://localhost:15672/#/)
+
+redis cli:
+- docker exec -it db sh
+- redis-cli -h localhost -p 6379

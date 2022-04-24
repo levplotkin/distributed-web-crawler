@@ -24,10 +24,11 @@ def ___url_processor(msg: Message):
 
     if not db.is_exist(key):
         db.insert(key, scanned_page.to_json())
-        log.debug(f"insert {scanned_page}")
+        log.debug(f"db: insert {scanned_page}")
         if msg.depth > 1:
             for link in page.get_links():
                 message = Message(url=link, depth=msg.depth - 1, scan_id=msg.scan_id)
+                log.debug(f"queue: submit {message}")
                 queue.put(message.to_json())
 
     else:
